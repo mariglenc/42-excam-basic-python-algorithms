@@ -1,0 +1,15 @@
+echo_validator
+==============
+
+Write a function:
+
+    def echo_validator(text: str) -> bool
+
+Return True if `text` is a PALINDROME when you ignore all non-
+alphanumeric characters and treat letters case-insensitively.
+
+Examples:
+    echo_validator("A man, a plan, a canal: Panama")   -> True
+    echo_validator("racecar")                          -> True
+    echo_validator("hello")                            -> False
+    echo_validator("")                                 -> True

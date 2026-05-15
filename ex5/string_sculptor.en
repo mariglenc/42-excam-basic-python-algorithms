@@ -1,0 +1,18 @@
+string_sculptor
+===============
+
+Write a function:
+
+    def string_sculptor(text: str) -> str
+
+Alternate the case of LETTERS in `text`: the 1st letter is lowercase,
+the 2nd letter is uppercase, the 3rd letter is lowercase, and so on.
+
+Non-letter characters are kept as-is AND do not advance the alternation
+counter (so a space or digit does not "use up" a turn).
+
+Examples:
+    string_sculptor("Hello")     -> "hElLo"
+    string_sculptor("ABCD")      -> "aBcD"
+    string_sculptor("a b c d")   -> "a B c D"
+    string_sculptor("12abc")     -> "12aBc"

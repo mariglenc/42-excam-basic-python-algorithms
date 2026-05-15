@@ -1,0 +1,18 @@
+whisper_cipher
+==============
+
+Write a function:
+
+    def whisper_cipher(text: str, shift: int) -> str
+
+Apply a CAESAR CIPHER to `text` with the given `shift`. Each letter is
+moved `shift` positions forward in the alphabet, wrapping around at the
+end. Letter case is preserved. Non-letter characters stay unchanged.
+
+The shift can be negative or larger than 26.
+
+Examples:
+    whisper_cipher("abc", 1)              -> "bcd"
+    whisper_cipher("xyz", 3)              -> "abc"
+    whisper_cipher("Hello, World!", 13)   -> "Uryyb, Jbeyq!"
+    whisper_cipher("ABC", -1)             -> "ZAB"

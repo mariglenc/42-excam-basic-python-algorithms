@@ -1,0 +1,23 @@
+number_base_converter
+=====================
+
+Write a function:
+
+    def number_base_converter(number: str, from_base: int, to_base: int) -> str
+
+Convert `number` (written in base `from_base`) into its representation
+in base `to_base`. Both bases must be in the range [2, 36] (digits 0-9
+followed by letters A-Z for digit values 10-35).
+
+Return the string "ERROR" if:
+  - either base is outside the range [2, 36], OR
+  - `number` cannot be parsed as a valid number in `from_base`.
+
+If the value equals zero, return "0".
+
+Examples:
+    number_base_converter("255", 10, 16)   -> "FF"
+    number_base_converter("1010", 2, 10)   -> "10"
+    number_base_converter("0", 10, 2)      -> "0"
+    number_base_converter("ZZ", 36, 10)    -> "1295"
+    number_base_converter("12", 1, 10)     -> "ERROR"

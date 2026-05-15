@@ -1,0 +1,20 @@
+mirror_matrix
+=============
+
+Write a function:
+
+    def mirror_matrix(matrix: list[list[int]]) -> list
+
+Given a 2D matrix (list of lists of integers), return a new matrix where
+EACH ROW IS REVERSED (a horizontal mirror).
+
+Examples:
+    mirror_matrix([[1,2,3],
+                   [4,5,6],
+                   [7,8,9]])
+    -> [[3,2,1],
+        [6,5,4],
+        [9,8,7]]
+
+    mirror_matrix([[1,2],[3,4]])   -> [[2,1],[4,3]]
+    mirror_matrix([])              -> []

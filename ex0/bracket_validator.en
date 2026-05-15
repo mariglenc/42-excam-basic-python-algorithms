@@ -1,0 +1,25 @@
+bracket_validator
+=================
+
+Write a function:
+
+    def bracket_validator(s: str) -> bool
+
+Given a string `s` that may contain the characters '(', ')', '{', '}',
+'[' and ']' (possibly mixed with other characters), return True if every
+opening bracket is correctly closed by the matching closing bracket in
+the right order, and False otherwise.
+
+Rules:
+  - Every opener must have a matching closer of the same type.
+  - Brackets must close in the reverse order they were opened
+    (so "([)]" is INVALID).
+  - An empty string is considered valid.
+  - Non-bracket characters are ignored.
+
+Examples:
+    bracket_validator("()[]{}")   -> True
+    bracket_validator("([{}])")   -> True
+    bracket_validator("(]")       -> False
+    bracket_validator("([)]")     -> False
+    bracket_validator("")         -> True

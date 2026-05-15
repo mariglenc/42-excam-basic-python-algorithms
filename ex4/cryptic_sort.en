@@ -1,0 +1,16 @@
+cryptic_sort
+============
+
+Write a function:
+
+    def cryptic_sort(strings: list[str]) -> list
+
+Sort a list of strings using three tie-breaking keys, in this order:
+  1. By LENGTH (shorter first).
+  2. Then by LOWERCASE alphabetical order.
+  3. Then by NUMBER OF VOWELS (a, e, i, o, u — both cases).
+
+Examples:
+    cryptic_sort(["bb", "a", "cc"])         -> ["a", "bb", "cc"]
+    cryptic_sort(["cat", "dog", "ant"])     -> ["ant", "cat", "dog"]
+    cryptic_sort(["hello", "Hi", "hey"])    -> ["Hi", "hey", "hello"]

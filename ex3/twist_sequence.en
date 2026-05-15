@@ -1,0 +1,15 @@
+twist_sequence
+==============
+
+Write a function:
+
+    def twist_sequence(arr: list[int], k: int) -> list[int]
+
+Rotate the list `arr` to the RIGHT by `k` positions. `k` may be greater
+than the length of the list (use modulo). If `arr` is empty, return [].
+
+Examples:
+    twist_sequence([1,2,3,4,5], 2)   -> [4, 5, 1, 2, 3]
+    twist_sequence([1,2,3], 4)       -> [3, 1, 2]    # 4 % 3 = 1
+    twist_sequence([1,2,3], 0)       -> [1, 2, 3]
+    twist_sequence([], 3)            -> []

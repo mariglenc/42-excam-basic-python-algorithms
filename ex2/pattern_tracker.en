@@ -1,0 +1,19 @@
+pattern_tracker
+===============
+
+Write a function:
+
+    def pattern_tracker(text: str) -> int
+
+Count the pairs of ADJACENT characters in `text` that are both digits
+AND form an ascending consecutive sequence (the second digit is exactly
+the first digit plus one).
+
+Note: 9 followed by 0 is NOT consecutive.
+
+Examples:
+    pattern_tracker("12345")   -> 4   # (1,2)(2,3)(3,4)(4,5)
+    pattern_tracker("a1b2")    -> 0   # digits are not adjacent
+    pattern_tracker("9012")    -> 2   # (0,1)(1,2)
+    pattern_tracker("abc")     -> 0
+    pattern_tracker("")        -> 0
