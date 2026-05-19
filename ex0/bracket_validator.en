@@ -23,3 +23,29 @@ Examples:
     bracket_validator("(]")       -> False
     bracket_validator("([)]")     -> False
     bracket_validator("")         -> True
+
+# ---
+
+# List Methods / Operations (`stack`)
+
+# `stack` is a list.
+
+# | Method / Operation   | Purpose                              |
+# | -------------------- | ------------------------------------ |
+# | `stack.append(char)` | Adds an opening bracket to the list  |
+# | `stack.pop()`        | Removes the last opening bracket     |
+# | `stack[-1]`          | Gets the last item in the list       |
+# | `not stack`          | Checks if the list is empty          |
+# | `len(stack)`         | Gets the number of items in the list |
+
+# ---
+
+# # Dictionary Methods / Operations (`pairs`)
+
+# `pairs` is a dictionary.
+
+# | Method / Operation | Purpose                                                 |
+# | ------------------ | ------------------------------------------------------- |
+# | `pairs.values()`   | Gets all opening brackets                               |
+# | `pairs.keys()`     | Gets all closing brackets                               |
+# | `pairs[char]`      | Gets the matching opening bracket for a closing bracket |
