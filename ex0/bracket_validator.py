@@ -1,6 +1,6 @@
 def bracket_validator(s: str) -> bool:
     stack = []
-    
+
     pairs = {
         ')': '(',
         '}': '{',
@@ -19,7 +19,9 @@ def bracket_validator(s: str) -> bool:
         elif char in pairs.keys():
 
             # checks if the stack is empty
-            # OR
+
+            # OR stack = [ "[", "]" ]
+
             # if the latest opening bracket does not match
             if not stack or stack[-1] != pairs[char]:
                 print("exit point returned false")
