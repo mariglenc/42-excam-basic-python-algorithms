@@ -1,0 +1,4 @@
+# study tool
+# .progress.json          # personal practice progress (per-machine)
+__pycache__/
+*.pyc

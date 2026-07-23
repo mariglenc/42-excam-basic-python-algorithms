@@ -1,0 +1,131 @@
+{
+  "exercises": {
+    "ex1-1": {
+      "attempts": [
+        {
+          "all_passed": false,
+          "gradeable": 5,
+          "load_error": null,
+          "passed": 0,
+          "score": 0.0,
+          "skipped": 0,
+          "timestamp": "2026-07-23T22:57:16",
+          "try": "try6.py"
+        },
+        {
+          "all_passed": false,
+          "gradeable": 5,
+          "load_error": null,
+          "passed": 3,
+          "score": 0.6,
+          "skipped": 0,
+          "timestamp": "2026-07-23T23:01:48",
+          "try": "try6.py"
+        },
+        {
+          "all_passed": false,
+          "gradeable": 5,
+          "load_error": null,
+          "passed": 3,
+          "score": 0.6,
+          "skipped": 0,
+          "timestamp": "2026-07-23T23:02:06",
+          "try": "try6.py"
+        },
+        {
+          "all_passed": true,
+          "gradeable": 5,
+          "load_error": null,
+          "passed": 5,
+          "score": 1.0,
+          "skipped": 0,
+          "timestamp": "2026-07-23T23:02:54",
+          "try": "try6.py"
+        },
+        {
+          "all_passed": true,
+          "gradeable": 5,
+          "load_error": null,
+          "passed": 5,
+          "score": 1.0,
+          "skipped": 0,
+          "timestamp": "2026-07-23T23:03:03",
+          "try": "try6.py"
+        }
+      ]
+    },
+    "ex1-3": {
+      "attempts": [
+        {
+          "all_passed": false,
+          "gradeable": 5,
+          "load_error": null,
+          "passed": 2,
+          "score": 0.4,
+          "skipped": 0,
+          "timestamp": "2026-07-23T23:39:23",
+          "try": "try3.py"
+        },
+        {
+          "all_passed": false,
+          "gradeable": 5,
+          "load_error": null,
+          "passed": 3,
+          "score": 0.6,
+          "skipped": 0,
+          "timestamp": "2026-07-23T23:49:28",
+          "try": "try3.py"
+        },
+        {
+          "all_passed": false,
+          "gradeable": 0,
+          "load_error": "TypeError: can only concatenate str (not \"int\") to str",
+          "passed": 0,
+          "score": 0.0,
+          "skipped": 0,
+          "timestamp": "2026-07-23T23:52:28",
+          "try": "try3.py"
+        },
+        {
+          "all_passed": true,
+          "gradeable": 5,
+          "load_error": null,
+          "passed": 5,
+          "score": 1.0,
+          "skipped": 0,
+          "timestamp": "2026-07-23T23:52:42",
+          "try": "try3.py"
+        }
+      ]
+    },
+    "ex2-1": {
+      "attempts": [
+        {
+          "all_passed": true,
+          "gradeable": 4,
+          "load_error": null,
+          "passed": 4,
+          "score": 1.0,
+          "skipped": 0,
+          "timestamp": "2026-07-23T23:31:49",
+          "try": "try3.py"
+        }
+      ]
+    },
+    "ex2-4": {
+      "attempts": [
+        {
+          "all_passed": true,
+          "gradeable": 3,
+          "load_error": null,
+          "passed": 3,
+          "score": 1.0,
+          "skipped": 0,
+          "timestamp": "2026-07-23T23:54:21",
+          "try": "try1.py"
+        }
+      ]
+    }
+  },
+  "version": 1
+}
