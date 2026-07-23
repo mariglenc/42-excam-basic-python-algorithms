@@ -10,5 +10,6 @@ ex2-4
 
 
 new concpets
-    function sorted()
-    function max()
+    function sorted()   -> sorted([1, 3, 5, 2, 4, 3]):   returns -> [1, 2, 3, 3, 4, 5]
+    function max()      -> max(10, 2, 8):                returns -> 10
+    list concatination  -> [1, 3, 5] + [2, 4, 3]:        returns -> [1, 2, 3, 3, 4, 5]
