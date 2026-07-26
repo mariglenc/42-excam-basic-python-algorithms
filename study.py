@@ -3,6 +3,7 @@
 
     python study.py list
     python study.py ask ex2-1
+    python study.py exam
     python study.py grade ex2-1
     python study.py stats
 """

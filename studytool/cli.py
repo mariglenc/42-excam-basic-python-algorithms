@@ -1,11 +1,12 @@
-"""Command-line interface: list / ask / grade / stats / solution.
+"""Command-line interface: list / ask / exam / grade / stats / solution.
 
 Run it from the repo root via the launcher::
 
     python study.py list
-    python study.py ask                 # weighted-random pick
+    python study.py ask                 # weighted pick; every exercise once per round
     python study.py ask ex2-1           # a specific exercise
     python study.py ask ex1-*           # weighted pick within a group
+    python study.py exam                # exam shell: one random exercise per level
     python study.py grade ex2-1         # grade the latest try<N>.py
     python study.py grade ex2-1 --try 1 # grade a specific attempt
     python study.py stats
@@ -15,6 +16,7 @@ from __future__ import annotations
 
 import argparse
 import os
+import random
 import re
 import sys
 
@@ -89,25 +91,23 @@ def cmd_ask(args) -> int:
         return 1
 
     data = progress.load(root)
-
-    if len(pool) == 1:
-        ex = pool[0]
-        weights = None
-    else:
-        import random
-
-        rng = random.Random(args.seed) if args.seed is not None else random.Random()
-        chosen_id, weights = progress.select_weighted(data, [e.id for e in pool], rng)
-        ex = next(e for e in pool if e.id == chosen_id)
+    rng = random.Random(args.seed) if args.seed is not None else random.Random()
+    chosen_id, weights = progress.select_for_ask(
+        data, [e.id for e in all_exs], [e.id for e in pool], rng)
+    ex = next(e for e in pool if e.id == chosen_id)
+    progress.save(root, data)  # the pick now counts toward the round; persist it
 
     # --- print the question (straight from the .en; never the solution) ---
     with open(ex.en_path, encoding="utf-8") as fh:
         question = fh.read().rstrip()
     print(c(f"=== {ex.id}  ({os.path.basename(ex.en_path)}) ===", "bold"))
-    if weights:
+    if len(weights) > 1:
         w = weights[ex.id]
-        print(c(f"(picked by weight {w:.2f} of {sum(weights.values()):.2f} total; "
-                f"higher = you fail it more / haven't tried it)", "dim"))
+        print(c(f"(picked by weight {w:.2f} of {sum(weights.values()):.2f} over the "
+                f"{len(weights)} exercises not yet asked this round)", "dim"))
+    asked = data["round"]["asked"]
+    note = " - round complete! next ask starts a new round" if len(asked) >= len(all_exs) else ""
+    print(c(f"(round progress: {len(asked)}/{len(all_exs)} exercises asked{note})", "dim"))
     print()
     print(question)
     print()
@@ -117,6 +117,59 @@ def cmd_ask(args) -> int:
     rel = os.path.relpath(path, root)
     print(c(f"created {rel}", "PASS") + f"  (pre-filled with: {ex.parsed.signature})")
     print(f"Edit it, then grade with:  python study.py grade {ex.id}")
+    return 0
+
+
+_LEVEL_RE = re.compile(r"^ex(\d+)")
+
+
+def cmd_exam(args) -> int:
+    """Exam-shell simulation: one uniformly-random exercise from each level.
+
+    The level is the number in the folder name (ex1-3 -> level 1, ex4 -> level
+    4). Picks are uniform per level and independent of the `ask` round, so an
+    exam never disturbs your drill rotation.
+    """
+    root = repo_root()
+    all_exs = discovery.discover(root)
+    if not all_exs:
+        print("No exercises found.")
+        return 1
+
+    levels: dict[int, list] = {}
+    unlevelled = []
+    for e in all_exs:
+        m = _LEVEL_RE.match(e.id)
+        if m:
+            levels.setdefault(int(m.group(1)), []).append(e)
+        else:
+            unlevelled.append(e.id)
+
+    rng = random.Random(args.seed) if args.seed is not None else random.Random()
+    picks = [(lvl, rng.choice(levels[lvl])) for lvl in sorted(levels)]
+
+    print(c(f"=== EXAM SHELL: {len(picks)} exercises, one per level ===", "bold"))
+    if unlevelled:
+        print(c(f"(skipped, id has no level number: {', '.join(unlevelled)})", "dim"))
+
+    sheet = []
+    for lvl, ex in picks:
+        with open(ex.en_path, encoding="utf-8") as fh:
+            question = fh.read().rstrip()
+        print()
+        print(c(f"--- Level {lvl}: {ex.id}  ({os.path.basename(ex.en_path)}) ---", "bold"))
+        print(question)
+        print()
+        n, path = attempts.create_attempt(ex.dir, ex.parsed, ex.id)
+        rel = os.path.relpath(path, root)
+        sheet.append((lvl, ex, rel))
+        print(c(f"created {rel}", "PASS") + f"  (pre-filled with: {ex.parsed.signature})")
+
+    print()
+    print(c("=== Your exam sheet ===", "bold"))
+    for lvl, ex, rel in sheet:
+        print(f"  Level {lvl}: edit {rel:<20} then:  python study.py grade {ex.id}")
+    print(c("(picked uniformly at random per level; does not affect the ask round)", "dim"))
     return 0
 
 
@@ -190,13 +243,14 @@ def cmd_grade(args) -> int:
 
 def cmd_stats(args) -> int:
     root = repo_root()
-    exs = discovery.resolve(discovery.discover(root), args.filter)
+    all_exs = discovery.discover(root)
+    exs = discovery.resolve(all_exs, args.filter)
     if not exs:
         print(f"No exercises match {args.filter!r}.")
         return 1
     data = progress.load(root)
 
-    print(c(f"{'id':<8} {'attempts':>8} {'fails':>6} {'pass%':>6} "
+    print(c(f"{'id':<8} {'attempts':>8} {'fails':>6} {'pass%':>6} {'last5':>6} "
             f"{'latest':>7} {'best':>6} {'weight':>7}", "bold"))
     rows = []
     for ex in exs:
@@ -206,7 +260,8 @@ def cmd_stats(args) -> int:
         latest = "-" if s["latest_score"] is None else f"{s['latest_score'] * 100:.0f}%"
         best = "-" if s["best_score"] is None else f"{s['best_score'] * 100:.0f}%"
         pr = f"{s['pass_rate'] * 100:.0f}%" if s["attempts"] else "-"
-        print(f"{ex.id:<8} {s['attempts']:>8} {s['fails']:>6} {pr:>6} "
+        last5 = f"{s['recent_fails']}F/{s['recent_n']}" if s["attempts"] else "-"
+        print(f"{ex.id:<8} {s['attempts']:>8} {s['fails']:>6} {pr:>6} {last5:>6} "
               f"{latest:>7} {best:>6} {w:>7.2f}")
 
     # most-failed leaderboard
@@ -219,9 +274,15 @@ def cmd_stats(args) -> int:
     never = [r[0] for r in rows if r[1]["attempts"] == 0]
     if never:
         print(c("Never attempted: ", "bold") + ", ".join(never))
+
+    asked = progress.round_state(data, [e.id for e in all_exs])
+    remaining = [e.id for e in all_exs if e.id not in asked]
+    print(c("Ask-round: ", "bold") + f"{len(asked)}/{len(all_exs)} asked"
+          + (f"; still to come: {', '.join(remaining)}" if remaining else " (complete)"))
     print(c("Weighting: ", "dim")
-          + c("never-tried=3.0; tried=1+4*fail_rate (1..5); just-passed *0.4; floor 0.2. "
-              "Higher weight is picked more often by `ask`.", "dim"))
+          + c("never-tried=3.0; tried=1+4*fail_rate over the last 5 grades (last5 column); "
+              "just-passed *0.4; floor 0.2. `ask` asks every exercise once per round; "
+              "higher weight just comes up earlier.", "dim"))
     return 0
 
 
@@ -265,10 +326,16 @@ def build_parser() -> argparse.ArgumentParser:
     lp.add_argument("filter", nargs="?", default=None, help="id / group / glob (default: all)")
     lp.set_defaults(func=cmd_list)
 
-    ap = sub.add_parser("ask", help="show a question and create the next attempt file")
-    ap.add_argument("filter", nargs="?", default=None, help="id / group / glob (default: weighted-random over all)")
+    ap = sub.add_parser("ask", help="show a question and create the next attempt file "
+                                    "(weighted; every exercise once per round)")
+    ap.add_argument("filter", nargs="?", default=None, help="id / group / glob (default: weighted pick over all)")
     ap.add_argument("--seed", type=int, default=None, help="seed the random pick (reproducible)")
     ap.set_defaults(func=cmd_ask)
+
+    xp = sub.add_parser("exam", aliases=["examshell"],
+                        help="exam-shell drill: one random exercise from each level")
+    xp.add_argument("--seed", type=int, default=None, help="seed the random picks (reproducible)")
+    xp.set_defaults(func=cmd_exam)
 
     gp = sub.add_parser("grade", help="grade an attempt against the .en examples")
     gp.add_argument("filter", nargs="?", default=None, help="id / group / glob (default: all with attempts)")

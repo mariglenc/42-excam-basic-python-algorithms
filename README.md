@@ -19,6 +19,9 @@ python study.py ask ex2-1            # ask a specific exercise
 python study.py ask ex1-*            # weighted pick within a group
 python study.py ask --seed 42        # reproducible pick
 
+python study.py exam                 # exam-shell drill: one random exercise from each level
+python study.py exam --seed 42       # reproducible exam (retake the same one)
+
 python study.py grade ex2-1          # grade the latest try<N>.py in ex2-1
 python study.py grade ex2-1 --try 1  # grade a specific attempt
 python study.py grade ex1-*          # grade the latest attempt of each match
@@ -67,6 +70,18 @@ proportion to it (and prints the weight it used).
 
 `fail_rate = fails / attempts`, where a "fail" is any graded attempt that didn't
 pass every gradeable example. See `stats` for the current weights.
+
+## Exam mode
+
+`exam` simulates the exam shell: it picks **one exercise per level**, uniformly
+at random (the level is the number in the folder name, so `ex1-3` is level 1
+and `ex4` is level 4). It prints every question, creates a fresh `try<N>.py`
+for each pick, and ends with an "exam sheet" recap of which file belongs to
+which level. Grade each answer as usual with `python study.py grade <id>`.
+
+Exam picks are independent of the `ask` round — taking an exam never disturbs
+the weighted drill rotation above. `--seed <n>` makes the picks reproducible,
+so you can retake the same exam.
 
 ## What it will and won't touch
 
