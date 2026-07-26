@@ -1,28 +1,22 @@
-# the old version
-# def cryptic_sort(strings: list[str]) -> list:
-#     return sorted(
-#             strings,
-#             key=lambda s: ( len(s),  s.lower(), sum(char in "aeuioAEUIO" for char in s) )
-#         )
-
-
-def count_vowels(word: str) -> int:
-    vowels = "aeiouAEIOU"           # all vowels, lowercase and uppercase
-    total = 0
+# count vowels
+def count_vowels(word:str):
+    counter = 0
+    vouels = "aeiouAEIOU"
     for char in word:
-        if char in vowels:          # is this character a vowel?
-            total += 1
-    return total
+        if char in vouels:
+            counter += 1
+    return counter
 
-
+# rankin values
 def ranking_values(word: str):
-    # Builds the 3 values Python sorts by, in priority order:
-    length = len(word)              # rule 1: shorter first
-    alphabetical = word.lower()     # rule 2: A-Z, ignoring case
-    vowels = count_vowels(word)     # rule 3: fewer vowels first
-    return (length, alphabetical, vowels)
+    word_len = len(word)
+    word_lower = word.lower()
+    vouels = count_vowels(word)
 
+    # return (lenght, word in lower, vouels)
+    return (word_len, word_lower, vouels)
 
+# main function pass ranking values at key
 def cryptic_sort(strings: list[str]) -> list:
     return sorted(strings, key=ranking_values)
 

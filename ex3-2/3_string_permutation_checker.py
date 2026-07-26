@@ -9,8 +9,6 @@ def string_permutation_checker(str1: str, str2: str) -> bool:
 
 
 
-
-
 # Example usage:
 print(string_permutation_checker("listen", "silent"))  # Output: True
 print(string_permutation_checker("hello", "world"))    # Output: False
