@@ -51,6 +51,150 @@
           "skipped": 0,
           "timestamp": "2026-07-23T23:03:03",
           "try": "try6.py"
+        },
+        {
+          "all_passed": true,
+          "gradeable": 5,
+          "load_error": null,
+          "passed": 5,
+          "score": 1.0,
+          "skipped": 0,
+          "timestamp": "2026-07-26T16:08:20",
+          "try": "try7.py"
+        },
+        {
+          "all_passed": false,
+          "gradeable": 5,
+          "load_error": null,
+          "passed": 1,
+          "score": 0.2,
+          "skipped": 0,
+          "timestamp": "2026-07-26T16:19:34",
+          "try": "try8.py"
+        },
+        {
+          "all_passed": true,
+          "gradeable": 5,
+          "load_error": null,
+          "passed": 5,
+          "score": 1.0,
+          "skipped": 0,
+          "timestamp": "2026-07-26T16:20:20",
+          "try": "try8.py"
+        },
+        {
+          "all_passed": false,
+          "gradeable": 0,
+          "load_error": "SyntaxError: expected ':' (try9.py, line 16)",
+          "passed": 0,
+          "score": 0.0,
+          "skipped": 0,
+          "timestamp": "2026-07-26T16:23:00",
+          "try": "try9.py"
+        },
+        {
+          "all_passed": true,
+          "gradeable": 5,
+          "load_error": null,
+          "passed": 5,
+          "score": 1.0,
+          "skipped": 0,
+          "timestamp": "2026-07-26T16:23:13",
+          "try": "try9.py"
+        }
+      ]
+    },
+    "ex1-2": {
+      "attempts": [
+        {
+          "all_passed": false,
+          "gradeable": 5,
+          "load_error": null,
+          "passed": 2,
+          "score": 0.4,
+          "skipped": 0,
+          "timestamp": "2026-07-26T15:50:17",
+          "try": "try4.py"
+        },
+        {
+          "all_passed": false,
+          "gradeable": 5,
+          "load_error": null,
+          "passed": 2,
+          "score": 0.4,
+          "skipped": 0,
+          "timestamp": "2026-07-26T15:52:35",
+          "try": "try4.py"
+        },
+        {
+          "all_passed": false,
+          "gradeable": 5,
+          "load_error": null,
+          "passed": 2,
+          "score": 0.4,
+          "skipped": 0,
+          "timestamp": "2026-07-26T15:52:48",
+          "try": "try4.py"
+        },
+        {
+          "all_passed": true,
+          "gradeable": 5,
+          "load_error": null,
+          "passed": 5,
+          "score": 1.0,
+          "skipped": 0,
+          "timestamp": "2026-07-26T15:52:55",
+          "try": "try4.py"
+        },
+        {
+          "all_passed": false,
+          "gradeable": 5,
+          "load_error": null,
+          "passed": 3,
+          "score": 0.6,
+          "skipped": 0,
+          "timestamp": "2026-07-26T15:59:24",
+          "try": "try5.py"
+        },
+        {
+          "all_passed": true,
+          "gradeable": 5,
+          "load_error": null,
+          "passed": 5,
+          "score": 1.0,
+          "skipped": 0,
+          "timestamp": "2026-07-26T16:00:09",
+          "try": "try5.py"
+        },
+        {
+          "all_passed": true,
+          "gradeable": 5,
+          "load_error": null,
+          "passed": 5,
+          "score": 1.0,
+          "skipped": 0,
+          "timestamp": "2026-07-26T16:02:47",
+          "try": "try5.py"
+        },
+        {
+          "all_passed": true,
+          "gradeable": 5,
+          "load_error": null,
+          "passed": 5,
+          "score": 1.0,
+          "skipped": 0,
+          "timestamp": "2026-07-26T16:14:34",
+          "try": "try6.py"
+        },
+        {
+          "all_passed": true,
+          "gradeable": 5,
+          "load_error": null,
+          "passed": 5,
+          "score": 1.0,
+          "skipped": 0,
+          "timestamp": "2026-07-26T16:26:21",
+          "try": "try7.py"
         }
       ]
     },
@@ -95,6 +239,254 @@
           "skipped": 0,
           "timestamp": "2026-07-23T23:52:42",
           "try": "try3.py"
+        },
+        {
+          "all_passed": false,
+          "gradeable": 5,
+          "load_error": null,
+          "passed": 2,
+          "score": 0.4,
+          "skipped": 0,
+          "timestamp": "2026-07-26T16:41:10",
+          "try": "try4.py"
+        },
+        {
+          "all_passed": false,
+          "gradeable": 5,
+          "load_error": null,
+          "passed": 2,
+          "score": 0.4,
+          "skipped": 0,
+          "timestamp": "2026-07-26T16:42:31",
+          "try": "try4.py"
+        },
+        {
+          "all_passed": false,
+          "gradeable": 5,
+          "load_error": null,
+          "passed": 2,
+          "score": 0.4,
+          "skipped": 0,
+          "timestamp": "2026-07-26T16:43:09",
+          "try": "try4.py"
+        },
+        {
+          "all_passed": false,
+          "gradeable": 0,
+          "load_error": "SyntaxError: invalid syntax (try4.py, line 9)",
+          "passed": 0,
+          "score": 0.0,
+          "skipped": 0,
+          "timestamp": "2026-07-26T16:44:43",
+          "try": "try4.py"
+        },
+        {
+          "all_passed": false,
+          "gradeable": 5,
+          "load_error": null,
+          "passed": 2,
+          "score": 0.4,
+          "skipped": 0,
+          "timestamp": "2026-07-26T16:45:02",
+          "try": "try4.py"
+        },
+        {
+          "all_passed": false,
+          "gradeable": 5,
+          "load_error": null,
+          "passed": 0,
+          "score": 0.0,
+          "skipped": 0,
+          "timestamp": "2026-07-26T16:45:46",
+          "try": "try4.py"
+        },
+        {
+          "all_passed": false,
+          "gradeable": 5,
+          "load_error": null,
+          "passed": 0,
+          "score": 0.0,
+          "skipped": 0,
+          "timestamp": "2026-07-26T16:45:54",
+          "try": "try4.py"
+        },
+        {
+          "all_passed": false,
+          "gradeable": 5,
+          "load_error": null,
+          "passed": 0,
+          "score": 0.0,
+          "skipped": 0,
+          "timestamp": "2026-07-26T16:46:21",
+          "try": "try4.py"
+        },
+        {
+          "all_passed": true,
+          "gradeable": 5,
+          "load_error": null,
+          "passed": 5,
+          "score": 1.0,
+          "skipped": 0,
+          "timestamp": "2026-07-26T16:46:40",
+          "try": "try4.py"
+        },
+        {
+          "all_passed": true,
+          "gradeable": 5,
+          "load_error": null,
+          "passed": 5,
+          "score": 1.0,
+          "skipped": 0,
+          "timestamp": "2026-07-26T16:46:57",
+          "try": "try4.py"
+        }
+      ]
+    },
+    "ex1-4": {
+      "attempts": [
+        {
+          "all_passed": true,
+          "gradeable": 4,
+          "load_error": null,
+          "passed": 4,
+          "score": 1.0,
+          "skipped": 0,
+          "timestamp": "2026-07-26T15:11:45",
+          "try": "try3.py"
+        }
+      ]
+    },
+    "ex1-5": {
+      "attempts": [
+        {
+          "all_passed": false,
+          "gradeable": 4,
+          "load_error": null,
+          "passed": 0,
+          "score": 0.0,
+          "skipped": 0,
+          "timestamp": "2026-07-26T15:17:10",
+          "try": "try5.py"
+        },
+        {
+          "all_passed": false,
+          "gradeable": 4,
+          "load_error": null,
+          "passed": 0,
+          "score": 0.0,
+          "skipped": 0,
+          "timestamp": "2026-07-26T15:27:41",
+          "try": "try5.py"
+        },
+        {
+          "all_passed": false,
+          "gradeable": 4,
+          "load_error": null,
+          "passed": 0,
+          "score": 0.0,
+          "skipped": 0,
+          "timestamp": "2026-07-26T15:28:16",
+          "try": "try5.py"
+        },
+        {
+          "all_passed": false,
+          "gradeable": 4,
+          "load_error": null,
+          "passed": 0,
+          "score": 0.0,
+          "skipped": 0,
+          "timestamp": "2026-07-26T15:29:09",
+          "try": "try5.py"
+        },
+        {
+          "all_passed": false,
+          "gradeable": 4,
+          "load_error": null,
+          "passed": 0,
+          "score": 0.0,
+          "skipped": 0,
+          "timestamp": "2026-07-26T15:29:58",
+          "try": "try5.py"
+        },
+        {
+          "all_passed": false,
+          "gradeable": 4,
+          "load_error": null,
+          "passed": 0,
+          "score": 0.0,
+          "skipped": 0,
+          "timestamp": "2026-07-26T15:31:08",
+          "try": "try5.py"
+        },
+        {
+          "all_passed": false,
+          "gradeable": 4,
+          "load_error": null,
+          "passed": 0,
+          "score": 0.0,
+          "skipped": 0,
+          "timestamp": "2026-07-26T15:31:47",
+          "try": "try5.py"
+        },
+        {
+          "all_passed": false,
+          "gradeable": 4,
+          "load_error": null,
+          "passed": 0,
+          "score": 0.0,
+          "skipped": 0,
+          "timestamp": "2026-07-26T15:32:30",
+          "try": "try5.py"
+        },
+        {
+          "all_passed": true,
+          "gradeable": 4,
+          "load_error": null,
+          "passed": 4,
+          "score": 1.0,
+          "skipped": 0,
+          "timestamp": "2026-07-26T15:35:59",
+          "try": "try5.py"
+        },
+        {
+          "all_passed": true,
+          "gradeable": 4,
+          "load_error": null,
+          "passed": 4,
+          "score": 1.0,
+          "skipped": 0,
+          "timestamp": "2026-07-26T16:33:29",
+          "try": "try6.py"
+        },
+        {
+          "all_passed": true,
+          "gradeable": 4,
+          "load_error": null,
+          "passed": 4,
+          "score": 1.0,
+          "skipped": 0,
+          "timestamp": "2026-07-26T16:38:07",
+          "try": "try7.py"
+        },
+        {
+          "all_passed": false,
+          "gradeable": 4,
+          "load_error": null,
+          "passed": 1,
+          "score": 0.25,
+          "skipped": 0,
+          "timestamp": "2026-07-26T16:49:43",
+          "try": "try8.py"
+        },
+        {
+          "all_passed": true,
+          "gradeable": 4,
+          "load_error": null,
+          "passed": 4,
+          "score": 1.0,
+          "skipped": 0,
+          "timestamp": "2026-07-26T16:50:03",
+          "try": "try8.py"
         }
       ]
     },
@@ -109,6 +501,134 @@
           "skipped": 0,
           "timestamp": "2026-07-23T23:31:49",
           "try": "try3.py"
+        },
+        {
+          "all_passed": true,
+          "gradeable": 4,
+          "load_error": null,
+          "passed": 4,
+          "score": 1.0,
+          "skipped": 0,
+          "timestamp": "2026-07-26T16:53:34",
+          "try": "try4.py"
+        },
+        {
+          "all_passed": true,
+          "gradeable": 4,
+          "load_error": null,
+          "passed": 4,
+          "score": 1.0,
+          "skipped": 0,
+          "timestamp": "2026-07-26T16:53:56",
+          "try": "try4.py"
+        }
+      ]
+    },
+    "ex2-2": {
+      "attempts": [
+        {
+          "all_passed": true,
+          "gradeable": 3,
+          "load_error": null,
+          "passed": 3,
+          "score": 1.0,
+          "skipped": 0,
+          "timestamp": "2026-07-26T15:04:47",
+          "try": "try2.py"
+        }
+      ]
+    },
+    "ex2-3": {
+      "attempts": [
+        {
+          "all_passed": false,
+          "gradeable": 0,
+          "load_error": "TypeError: 'list' object cannot be interpreted as an integer",
+          "passed": 0,
+          "score": 0.0,
+          "skipped": 0,
+          "timestamp": "2026-07-26T14:50:36",
+          "try": "try2.py"
+        },
+        {
+          "all_passed": false,
+          "gradeable": 0,
+          "load_error": "TypeError: 'list' object cannot be interpreted as an integer",
+          "passed": 0,
+          "score": 0.0,
+          "skipped": 0,
+          "timestamp": "2026-07-26T14:50:43",
+          "try": "try2.py"
+        },
+        {
+          "all_passed": false,
+          "gradeable": 4,
+          "load_error": null,
+          "passed": 2,
+          "score": 0.5,
+          "skipped": 0,
+          "timestamp": "2026-07-26T14:55:30",
+          "try": "try2.py"
+        },
+        {
+          "all_passed": true,
+          "gradeable": 4,
+          "load_error": null,
+          "passed": 4,
+          "score": 1.0,
+          "skipped": 0,
+          "timestamp": "2026-07-26T14:56:18",
+          "try": "try2.py"
+        },
+        {
+          "all_passed": false,
+          "gradeable": 4,
+          "load_error": null,
+          "passed": 0,
+          "score": 0.0,
+          "skipped": 0,
+          "timestamp": "2026-07-26T15:08:01",
+          "try": "try3.py"
+        },
+        {
+          "all_passed": true,
+          "gradeable": 4,
+          "load_error": null,
+          "passed": 4,
+          "score": 1.0,
+          "skipped": 0,
+          "timestamp": "2026-07-26T15:08:44",
+          "try": "try3.py"
+        },
+        {
+          "all_passed": true,
+          "gradeable": 4,
+          "load_error": null,
+          "passed": 4,
+          "score": 1.0,
+          "skipped": 0,
+          "timestamp": "2026-07-26T15:40:24",
+          "try": "try4.py"
+        },
+        {
+          "all_passed": true,
+          "gradeable": 4,
+          "load_error": null,
+          "passed": 4,
+          "score": 1.0,
+          "skipped": 0,
+          "timestamp": "2026-07-26T15:41:17",
+          "try": "try4.py"
+        },
+        {
+          "all_passed": true,
+          "gradeable": 4,
+          "load_error": null,
+          "passed": 4,
+          "score": 1.0,
+          "skipped": 0,
+          "timestamp": "2026-07-26T16:16:04",
+          "try": "try5.py"
         }
       ]
     },
@@ -123,6 +643,78 @@
           "skipped": 0,
           "timestamp": "2026-07-23T23:54:21",
           "try": "try1.py"
+        },
+        {
+          "all_passed": true,
+          "gradeable": 3,
+          "load_error": null,
+          "passed": 3,
+          "score": 1.0,
+          "skipped": 0,
+          "timestamp": "2026-07-26T16:27:08",
+          "try": "try2.py"
+        }
+      ]
+    },
+    "ex3-1": {
+      "attempts": [
+        {
+          "all_passed": true,
+          "gradeable": 4,
+          "load_error": null,
+          "passed": 4,
+          "score": 1.0,
+          "skipped": 0,
+          "timestamp": "2026-07-26T15:38:09",
+          "try": "try3.py"
+        },
+        {
+          "all_passed": true,
+          "gradeable": 4,
+          "load_error": null,
+          "passed": 4,
+          "score": 1.0,
+          "skipped": 0,
+          "timestamp": "2026-07-26T16:35:43",
+          "try": "try4.py"
+        }
+      ]
+    },
+    "ex3-2": {
+      "attempts": [
+        {
+          "all_passed": true,
+          "gradeable": 4,
+          "load_error": null,
+          "passed": 4,
+          "score": 1.0,
+          "skipped": 0,
+          "timestamp": "2026-07-26T15:13:46",
+          "try": "try3.py"
+        },
+        {
+          "all_passed": true,
+          "gradeable": 4,
+          "load_error": null,
+          "passed": 4,
+          "score": 1.0,
+          "skipped": 0,
+          "timestamp": "2026-07-26T16:09:41",
+          "try": "try4.py"
+        }
+      ]
+    },
+    "ex4": {
+      "attempts": [
+        {
+          "all_passed": true,
+          "gradeable": 3,
+          "load_error": null,
+          "passed": 3,
+          "score": 1.0,
+          "skipped": 0,
+          "timestamp": "2026-07-26T15:02:46",
+          "try": "try3.py"
         }
       ]
     }
