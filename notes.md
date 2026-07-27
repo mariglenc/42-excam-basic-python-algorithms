@@ -5,6 +5,9 @@ ex1-3
     isdigit function -> forgot at all how to check if a char is nr
     forgot to convert string to int int(text[i])
 
+ex2-1
+    today i frogot string.alnum()
+
 ex2-2
     today i frogot what is list[::-1]
 
