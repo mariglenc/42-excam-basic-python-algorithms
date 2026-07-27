@@ -1,0 +1,10 @@
+# ex3-2 - string_permutation_checker
+# attempt: try10.py
+# (signature pre-filled from the .en; write your solution below)
+
+def string_permutation_checker(str1: str, str2: str) -> bool:
+    str1 = str1.replace(" ","").lower() # clean all spaces and make all lowercase
+    str2 = str2.replace(" ","").lower()
+
+    return sorted(str1) == sorted(str2) # sort both of them and compare
+

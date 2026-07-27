@@ -1,3 +1,6 @@
+https://claude.ai/share/01ce6d82-7aa8-4945-8c05-5f6765f6d536
+https://claude.ai/share/01ce6d82-7aa8-4945-8c05-5f6765f6d536
+
 issues:
 ex1-3
     for i in range(len(text)) -> forgot about this kind of iteration
@@ -5,8 +8,15 @@ ex1-3
     isdigit function -> forgot at all how to check if a char is nr
     forgot to convert string to int int(text[i])
 
+ex1-4
+    make a mistake at i increasing isntead of (i += 1 ) did (i =+ 1)
+
+ex1-5
+    forgot why we do %26 + ord('a')   
+
 ex2-1
-    today i frogot string.alnum()
+    forgot string.alnum()
+    forgot that we can access a string with list slicing methods
 
 ex2-2
     today i frogot what is list[::-1]
